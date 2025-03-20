@@ -19,12 +19,15 @@ async def generate_recipe(image: UploadFile = File(...)):
 
     # Step 1: Extract dice information using GPT Vision
     dice_description = await extract_dice_from_image(image)
+    print(f"Dice: {dice_description}")
 
     # Step 2: Generate recipe based on dice description
     recipe = get_recipe_from_dice(dice_description)
+    print(f"Recipe: {recipe}")
 
     # Step 3: Generate matching recipe image via DALL·E
     recipe_image_url = generate_recipe_image(recipe)
+    print(f"Recipe Image: {recipe_image_url}")
 
     # Step 4: Return recipe text and image URL to frontend
     return {

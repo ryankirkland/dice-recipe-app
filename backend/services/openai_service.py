@@ -14,7 +14,7 @@ async def extract_dice_from_image(image: UploadFile) -> str:
     base64_image = base64.b64encode(image_bytes).decode('utf-8')
 
     response = client.chat.completions.create(
-        model="gpt-4-vision-preview",
+        model="gpt-4-turbo",
         messages=[
             {
                 "role": "user",
