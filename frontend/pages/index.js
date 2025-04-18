@@ -28,7 +28,7 @@ export default function Home() {
     }, 1000); // Increment progress every second
 
     try {
-      const response = await fetch('http://localhost:8000/api/generate-recipe', {
+      const response = await fetch('https://dice-recipe-app.onrender.com', {
         method: 'POST',
         body: formData,
       });
